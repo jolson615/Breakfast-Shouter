@@ -1,10 +1,12 @@
 from app import app
 from flask import render_template, request
 from app.models.model import shout
+import sys
 
 @app.route('/')
 @app.route('/index')
 def index():
+    print(sys.version_info)
     user = { 'name': 'Alejandra', 'grade': '10' }
     return render_template('index.html', user = user, title = "Homepage")
     
